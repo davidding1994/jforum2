@@ -1,14 +1,15 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.WikiContext" %>
-<%@ page import="com.ecyrd.jspwiki.WikiSession" %>
-<%@ page import="com.ecyrd.jspwiki.WikiEngine" %>
-<%@ page import="com.ecyrd.jspwiki.auth.UserManager" %>
-<%@ page import="com.ecyrd.jspwiki.auth.WikiSecurityException" %>
-<%@ page import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule" %>
-<%@ page import="com.ecyrd.jspwiki.auth.user.DuplicateUserException" %>
-<%@ page import="com.ecyrd.jspwiki.auth.user.UserProfile" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.WikiContext"%>
+<%@ page import="com.ecyrd.jspwiki.WikiSession"%>
+<%@ page import="com.ecyrd.jspwiki.WikiEngine"%>
+<%@ page import="com.ecyrd.jspwiki.auth.UserManager"%>
+<%@ page import="com.ecyrd.jspwiki.auth.WikiSecurityException"%>
+<%@ page
+	import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule"%>
+<%@ page import="com.ecyrd.jspwiki.auth.user.DuplicateUserException"%>
+<%@ page import="com.ecyrd.jspwiki.auth.user.UserProfile"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 
 <%! 
     public void jspInit()

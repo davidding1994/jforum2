@@ -1,5 +1,5 @@
-<%@page import="com.ecyrd.jspwiki.WikiEngine" %>
-<%@page import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule" %>
+<%@page import="com.ecyrd.jspwiki.WikiEngine"%>
+<%@page import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule"%>
 <%!
     public void jspInit()
     {

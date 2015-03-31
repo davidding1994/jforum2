@@ -1,8 +1,8 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="org.apache.commons.lang.time.StopWatch" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="org.apache.commons.lang.time.StopWatch"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 <%! 
     public void jspInit()
     {
@@ -36,7 +36,8 @@
                                                             wikiContext.getTemplate(),
                                                             "ViewTemplate.jsp" );
 
-%><wiki:Include page="<%=contentPage%>" /><%
+%><wiki:Include page="<%=contentPage%>" />
+<%
     sw.stop();
     if( log.isDebugEnabled() ) log.debug("Total response time from server on page "+pagereq+": "+sw);
 %>

@@ -3,7 +3,7 @@
 <bbConfig>
 	<!-- CODE -->
 	<match name="code">
-		<regex>(?s)\[code\](.*?)\[/code\]</regex>		
+		<regex>(?s)\[code\](.*?)\[/code\]</regex>
 		<replace>
 		<![CDATA[
         <textarea name="code" class="java" cols="60" rows="10">$1</textarea>
@@ -19,7 +19,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<match name="openSimpleQuote">
 		<regex>(?i)\[quote\]</regex>
 		<replace>
@@ -29,7 +29,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<match name="openQuote">
 		<regex>(?i)\[quote=['"]?(.*?[^'"])['"]?\]</regex>
 		<replace>
@@ -40,7 +40,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<match name="closeQuote">
 		<regex>(?i)\[/quote\]</regex>
 		<replace>
@@ -60,7 +60,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- I -->
 	<match name="i">
 		<regex>(?s)(?i)\[i\](.*?)\[/i\]</regex>
@@ -70,7 +70,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- U -->
 	<match name="u">
 		<regex>(?s)(?i)\[u\](.*?)\[/u\]</regex>
@@ -80,7 +80,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- LIST -->
 	<match name="list">
 		<regex>(?s)(?i)\[list\](.*?)\[/list\]</regex>
@@ -90,7 +90,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- IMG -->
 	<match name="img" removeQuotes="true">
 		<regex>(?i)\[img\](.*?)\[/img\]</regex>
@@ -100,7 +100,7 @@
 		]]>
 		</replace>
 	</match>
-    
+
 	<!-- Flash -->
 	<match name="flash" removeQuotes="true">
 		<regex>(?i)\[flash\](.*?)\[/flash\]</regex>
@@ -141,8 +141,8 @@
 		]]>
 		</replace>
 	</match>
-	
-    <!-- Real Media -->
+
+	<!-- Real Media -->
 	<match name="rm" removeQuotes="true">
 		<regex>(?i)\[rm\](.*?)\[/rm\]</regex>
 		<replace>
@@ -170,7 +170,7 @@
 		]]>
 		</replace>
 	</match>
-				
+
 	<!-- Automatic URL matching -->
 	<match name="auto-url" removeQuotes="true" alwaysProcess="true">
 		<regex>(^|[\n ]|\()([\w]+?://[^ \"\n\r\t&lt;\)\[]*)</regex>
@@ -207,7 +207,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- URL -->
 	<match name="simple-url" removeQuotes="true">
 		<regex>(?i)\[url\](.*?)\[/url\]</regex>
@@ -217,7 +217,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- URL=?? -->
 	<match name="descriptive-url" removeQuotes="true">
 		<regex>(?i)\[url=['"]?(.*?[^'"])['"]?\](.*?)\[/url\]</regex>
@@ -227,7 +227,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- COLOR -->
 	<match name="color" removeQuotes="true">
 		<regex>(?s)(?i)\[color=['"]?(.*?[^'"])['"]?\](.*?)\[/color\]</regex>
@@ -257,7 +257,7 @@
 		]]>
 		</replace>
 	</match>
-	
+
 	<!-- YouTube -->
 	<match name="youtube">
 		<regex>

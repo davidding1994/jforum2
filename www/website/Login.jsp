@@ -1,11 +1,12 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="java.security.Principal" %>
-<%@ page import="com.ecyrd.jspwiki.auth.*" %>
-<%@ page import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule" %>
-<%@ page import="com.ecyrd.jspwiki.tags.WikiTagBase" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="java.security.Principal"%>
+<%@ page import="com.ecyrd.jspwiki.auth.*"%>
+<%@ page
+	import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule"%>
+<%@ page import="com.ecyrd.jspwiki.tags.WikiTagBase"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 
 <%! 
     public void jspInit()

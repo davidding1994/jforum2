@@ -1,7 +1,7 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 <%! 
     public void jspInit()
     {
@@ -51,14 +51,16 @@
             log.info("Page rename request failed because new page name was left blank");
         
 %>
-            <h3>Unable to rename page</h3>
+<h3>Unable to rename page</h3>
 
-            <dl>
-               <dt><b>Reason:</b></dt>
-               <dd>
-                  <wiki:Messages div="error" />
-               </dd>      
-            </dl>
+<dl>
+	<dt>
+		<b>Reason:</b>
+	</dt>
+	<dd>
+		<wiki:Messages div="error" />
+	</dd>
+</dl>
 <%
         }
 
@@ -84,14 +86,16 @@
         }
 
 %>
-       <h3>Unable to rename page</h3>
+<h3>Unable to rename page</h3>
 
-       <dl>
-          <dt><b>Reason:</b></dt>
-          <dd>
-             <wiki:Messages div="error" />
-          </dd>      
-       </dl>
+<dl>
+	<dt>
+		<b>Reason:</b>
+	</dt>
+	<dd>
+		<wiki:Messages div="error" />
+	</dd>
+</dl>
 <%
     }
 %>

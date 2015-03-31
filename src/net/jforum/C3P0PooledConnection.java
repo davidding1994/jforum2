@@ -54,89 +54,89 @@ import com.mchange.v2.c3p0.DataSources;
 
 /**
  * @author Rafael Steil
- * @version $Id: C3P0PooledConnection.java,v 1.7 2007/04/12 02:11:52 rafaelsteil Exp $
+ * @version $Id: C3P0PooledConnection.java,v 1.7 2007/04/12 02:11:52 rafaelsteil
+ *          Exp $
  */
-public class C3P0PooledConnection extends DBConnection
-{
+public class C3P0PooledConnection extends DBConnection {
 	private ComboPooledDataSource ds;
-	
+
 	/**
 	 * 
 	 * @see net.jforum.DBConnection#init()
 	 */
-	public void init() throws Exception
-	{
+	public void init() throws Exception {
 		this.ds = new ComboPooledDataSource();
-		
-		this.ds.setDriverClass(SystemGlobals.getValue(ConfigKeys.DATABASE_CONNECTION_DRIVER));
-		this.ds.setJdbcUrl(SystemGlobals.getValue(ConfigKeys.DATABASE_CONNECTION_STRING));
-		this.ds.setMinPoolSize(SystemGlobals.getIntValue(ConfigKeys.DATABASE_POOL_MIN));
-		this.ds.setMaxPoolSize(SystemGlobals.getIntValue(ConfigKeys.DATABASE_POOL_MAX));
-		this.ds.setIdleConnectionTestPeriod(SystemGlobals.getIntValue(ConfigKeys.DATABASE_PING_DELAY));
-		
+
+		this.ds.setDriverClass(SystemGlobals
+				.getValue(ConfigKeys.DATABASE_CONNECTION_DRIVER));
+		this.ds.setJdbcUrl(SystemGlobals
+				.getValue(ConfigKeys.DATABASE_CONNECTION_STRING));
+		this.ds.setMinPoolSize(SystemGlobals
+				.getIntValue(ConfigKeys.DATABASE_POOL_MIN));
+		this.ds.setMaxPoolSize(SystemGlobals
+				.getIntValue(ConfigKeys.DATABASE_POOL_MAX));
+		this.ds.setIdleConnectionTestPeriod(SystemGlobals
+				.getIntValue(ConfigKeys.DATABASE_PING_DELAY));
+
 		this.extraParams();
 	}
-	
-	private void extraParams()
-	{
+
+	private void extraParams() {
 		String extra = SystemGlobals.getValue(ConfigKeys.C3P0_EXTRA_PARAMS);
-		
+
 		if (extra != null && extra.trim().length() > 0) {
 			String[] p = extra.split(";");
-			
+
 			for (int i = 0; i < p.length; i++) {
 				String[] kv = p[i].trim().split("=");
-				
+
 				if (kv.length == 2) {
 					this.invokeSetter(kv[0], kv[1]);
 				}
 			}
 		}
 	}
-	
+
 	/**
-	 * Huge hack to invoke methods without the need of an external configuration file
-	 * and whithout knowing the argument's type
+	 * Huge hack to invoke methods without the need of an external configuration
+	 * file and whithout knowing the argument's type
 	 */
-	private void invokeSetter(String propertyName, String value)
-	{
+	private void invokeSetter(String propertyName, String value) {
 		try {
-			String setter = "set" + propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
-			
+			String setter = "set" + propertyName.substring(0, 1).toUpperCase()
+					+ propertyName.substring(1);
+
 			Method[] methods = this.ds.getClass().getMethods();
-			
+
 			for (int i = 0; i < methods.length; i++) {
 				Method method = methods[i];
-				
+
 				if (method.getName().equals(setter)) {
 					Class[] paramTypes = method.getParameterTypes();
-					
+
 					if (paramTypes[0] == String.class) {
 						method.invoke(this.ds, new Object[] { value });
-					}
-					else if (paramTypes[0] == int.class) {
-						method.invoke(this.ds, new Object[] { new Integer(value) });
-					}
-					else if (paramTypes[0] == boolean.class) {
-						method.invoke(this.ds, new Object[] { Boolean.valueOf(value) });
+					} else if (paramTypes[0] == int.class) {
+						method.invoke(this.ds,
+								new Object[] { new Integer(value) });
+					} else if (paramTypes[0] == boolean.class) {
+						method.invoke(this.ds,
+								new Object[] { Boolean.valueOf(value) });
 					}
 				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * @see net.jforum.DBConnection#getConnection()
 	 */
-	public Connection getConnection()
-	{
+	public Connection getConnection() {
 		try {
 			return this.ds.getConnection();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new DatabaseException(e);
 		}
 	}
@@ -144,16 +144,14 @@ public class C3P0PooledConnection extends DBConnection
 	/**
 	 * @see net.jforum.DBConnection#releaseConnection(java.sql.Connection)
 	 */
-	public void releaseConnection(Connection conn)
-	{
-        if (conn==null) {
-            return;
-        }
-
-        try {
-			conn.close();
+	public void releaseConnection(Connection conn) {
+		if (conn == null) {
+			return;
 		}
-		catch (Exception e) {
+
+		try {
+			conn.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -161,8 +159,7 @@ public class C3P0PooledConnection extends DBConnection
 	/**
 	 * @see net.jforum.DBConnection#realReleaseAllConnections()
 	 */
-	public void realReleaseAllConnections() throws Exception
-	{
+	public void realReleaseAllConnections() throws Exception {
 		DataSources.destroy(this.ds);
 	}
 }

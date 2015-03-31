@@ -1,10 +1,10 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="com.ecyrd.jspwiki.auth.*" %>
-<%@ page import="com.ecyrd.jspwiki.auth.permissions.*" %>
-<%@ page import="java.util.*" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="com.ecyrd.jspwiki.auth.*"%>
+<%@ page import="com.ecyrd.jspwiki.auth.permissions.*"%>
+<%@ page import="java.util.*"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 
 <%! 
     public void jspInit()
@@ -100,6 +100,7 @@
     String contentPage = wiki.getTemplateManager().findJSP( pageContext,
                                                             wikiContext.getTemplate(),
                                                             "ViewTemplate.jsp" );
-%><wiki:Include page="<%=contentPage%>" /><%
+%><wiki:Include page="<%=contentPage%>" />
+<%
     log.debug("SEARCH COMPLETE");
 %>

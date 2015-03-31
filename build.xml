@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- ********************************************************************* -->
 <!-- Ant build script for JForum -->
-<!-- Version: $Id: build.xml,v 1.27 2007/10/11 05:04:13 rafaelsteil Exp $  -->
+<!-- Version: $Id: build.xml,v 1.27 2007/10/11 05:04:13 rafaelsteil Exp $ -->
 <!-- ********************************************************************* -->
 
 <project name="JForum" default="compile" basedir=".">
@@ -20,7 +20,7 @@
 	<property name="version" value="2.1.8" />
 	<property name="filename" value="jforum-${version}" />
 	<property name="warfile" value="${filename}.war" />
-	<property name="srcfile" value="${filename}-src.zip"/>
+	<property name="srcfile" value="${filename}-src.zip" />
 	<property name="javadoc.packages" value="net.jforum.*" />
 
 	<property name="build.dir" location="build" />
@@ -65,16 +65,10 @@
 	<!-- Java Docs -->
 	<target name="javadocs" description="Generates the API documentation">
 		<javadoc bottom="${project.name} by ${author} - ${copyright}"
-		         packagenames="${javadoc.packages}"
-		         sourcepath="${src.dir}"
-		         defaultexcludes="yes"
-		         destdir="${api.dir}"
-		         doctitle="Javadocs: ${project.name} ${version}"
-		         use="true"
-		         private="false"
-		         version="false"
-		         windowtitle="Javadocs: ${project.name} ${version}"
-		         classpathref="base.path">
+			packagenames="${javadoc.packages}" sourcepath="${src.dir}"
+			defaultexcludes="yes" destdir="${api.dir}" doctitle="Javadocs: ${project.name} ${version}"
+			use="true" private="false" version="false"
+			windowtitle="Javadocs: ${project.name} ${version}" classpathref="base.path">
 			<link href="http://java.sun.com/j2se/1.4/docs/api/" />
 			<link href="http://java.sun.com/products/servlet/2.3/javadoc/" />
 		</javadoc>
@@ -82,14 +76,8 @@
 
 	<!-- Compile -->
 	<target name="compile" depends="init" description="Compiles the source code">
-		<javac fork="true"
-		       debug="true"
-		       optimize="false"
-		       deprecation="false"
-		       source="1.4"
-		       target="1.4"
-		       srcdir="${src.dir}"
-		       destdir="${classes.dir}">
+		<javac fork="true" debug="true" optimize="false" deprecation="false"
+			source="1.4" target="1.4" srcdir="${src.dir}" destdir="${classes.dir}">
 			<classpath>
 				<path refid="base.path" />
 			</classpath>
@@ -98,9 +86,9 @@
 
 	<!-- Dist -->
 	<target name="dist" depends="compile" description="Generates the distribution file">
-		<delete file="${dist.dir}/${warfile}"/>
-		<delete file="${dist.dir}/${srcfile}"/>
-		
+		<delete file="${dist.dir}/${warfile}" />
+		<delete file="${dist.dir}/${srcfile}" />
+
 		<!-- war -->
 		<war destfile="${dist.dir}/${warfile}" webxml="${web.dir}/WEB-INF/web.xml">
 			<fileset dir="${web.dir}">
@@ -112,9 +100,9 @@
 				<include name="*.htm" />
 				<include name="*.txt" />
 				<include name="*.jsp" />
-				<include name="tools/bin/**/*"/>
-				<exclude name="upload/**/*"/>
-				<exclude name="WEB-INF/jforumLuceneIndex/**/*"/>
+				<include name="tools/bin/**/*" />
+				<exclude name="upload/**/*" />
+				<exclude name="WEB-INF/jforumLuceneIndex/**/*" />
 			</fileset>
 			<webinf dir="${web.dir}/WEB-INF">
 				<include name="*.xml" />
@@ -133,28 +121,30 @@
 				<attribute name="Built-Date" value="${TODAY}" />
 			</manifest>
 		</war>
-		
+
 		<!-- src -->
 		<zip destfile="${dist.dir}/${srcfile}" update="false">
 			<fileset dir="${web.dir}">
-				<include name="**/*"/>
-				<exclude name="upload/**/*"/>
-				<exclude name="www/"/>
-				<exclude name="build/"/>
-				<exclude name="dist/"/>
-				<exclude name="WEB-INF/jforumLuceneIndex/**/*"/>
-				<exclude name="WEB-INF/config/jforum-custom.conf"/>
+				<include name="**/*" />
+				<exclude name="upload/**/*" />
+				<exclude name="www/" />
+				<exclude name="build/" />
+				<exclude name="dist/" />
+				<exclude name="WEB-INF/jforumLuceneIndex/**/*" />
+				<exclude name="WEB-INF/config/jforum-custom.conf" />
 			</fileset>
 		</zip>
 	</target>
 
 	<!-- Deploy -->
-	<target name="deploy" depends="dist" description="Copies WAR File into your Container">
+	<target name="deploy" depends="dist"
+		description="Copies WAR File into your Container">
 		<copy file="${dist.dir}/${warfile}" todir="${deploy.dir}" />
 	</target>
 
 	<!-- Deploy Dev -->
-	<target name="deploy-dev" depends="dist" description="Deploys JForum to a development dir">
+	<target name="deploy-dev" depends="dist"
+		description="Deploys JForum to a development dir">
 		<unwar dest="${deploy.dev.dir}" src="${dist.dir}/${warfile}" />
 	</target>
 

@@ -1,8 +1,8 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="com.ecyrd.jspwiki.plugin.VotePlugin" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="com.ecyrd.jspwiki.plugin.VotePlugin"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 <%! 
     public void jspInit()
     {
@@ -10,7 +10,8 @@
     }
     Logger log = Logger.getLogger("JSPWiki"); 
     WikiEngine wiki;
-%><%
+%>
+<%
     // Create wiki context and check for authorization
     WikiContext wikiContext = wiki.createContext( request, WikiContext.VIEW );
     String pagereq = wikiContext.getName();

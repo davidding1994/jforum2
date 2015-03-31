@@ -1,9 +1,9 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="com.ecyrd.jspwiki.ui.EditorManager" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="com.ecyrd.jspwiki.ui.EditorManager"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 <%! 
     public void jspInit()
     {

@@ -1,14 +1,15 @@
-<%@ page import="org.apache.log4j.*" %>
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ page import="com.ecyrd.jspwiki.filters.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.ecyrd.jspwiki.ui.EditorManager" %>
-<%@ page import="com.ecyrd.jspwiki.util.HttpUtil" %>
-<%@ page import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule" %>
-<%@ page errorPage="/Error.jsp" %>
-<%@ page import="javax.servlet.http.Cookie" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="org.apache.log4j.*"%>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ page import="com.ecyrd.jspwiki.filters.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="com.ecyrd.jspwiki.ui.EditorManager"%>
+<%@ page import="com.ecyrd.jspwiki.util.HttpUtil"%>
+<%@ page
+	import="com.ecyrd.jspwiki.auth.login.CookieAssertionLoginModule"%>
+<%@ page errorPage="/Error.jsp"%>
+<%@ page import="javax.servlet.http.Cookie"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 
 <%! 
     public void jspInit()

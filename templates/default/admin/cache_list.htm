@@ -1,13 +1,19 @@
 <#setting number_format = "#"/>
 
-<style type="text/css">@import url( ${contextPath}/templates/${templateName}/styles/style.css?${startupTime} );</style>
-<table class="forumline" cellspacing="1" cellpadding="3" width="100%" border="0">
+<style type="text/css">
+@import
+	url( ${contextPath}/templates/${templateName}/styles/style.css?${startupTime} )
+	;
+</style>
+<table class="forumline" cellspacing="1" cellpadding="3" width="100%"
+	border="0">
 	<tr>
 		<th class="thhead" valign="middle" colspan="7" height="25">${I18n.getMessage("Cache.adminTitle")}</th>
 	</tr>
 
 	<tr>
-		<td align="center" colspan="3"><span class="gen"><font color="#ff0000"><b>${I18n.getMessage("Cache.danger")}</b></font></span></td>
+		<td align="center" colspan="3"><span class="gen"><font
+				color="#ff0000"><b>${I18n.getMessage("Cache.danger")}</b></font></span></td>
 	</tr>
 
 	<tr>
@@ -19,9 +25,10 @@
 	<!-- BB -->
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.bbCode")}</span></td>
-		<td class="row2"><span class="gen">${bb.getBBCollection().getBbList().size() + bb.getBBCollection().getAlwaysProcessList().size()}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=bbReload">${I18n.getMessage("Cache.reload")}</a>
+		<td class="row2"><span class="gen">${bb.getBBCollection().getBbList().size()
+				+ bb.getBBCollection().getAlwaysProcessList().size()}</span></td>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=bbReload">${I18n.getMessage("Cache.reload")}</a>
 		</td>
 	</tr>
 
@@ -29,8 +36,8 @@
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.sessions")}</span></td>
 		<td class="row2"><span class="gen">${session.size()}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=sessionClear">${I18n.getMessage("Cache.clear")}</a>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=sessionClear">${I18n.getMessage("Cache.clear")}</a>
 		</td>
 	</tr>
 
@@ -38,8 +45,8 @@
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.modules")}</span></td>
 		<td class="row2"><span class="gen">${modules.size()}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=modulesReload">${I18n.getMessage("Cache.reload")}</a>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=modulesReload">${I18n.getMessage("Cache.reload")}</a>
 		</td>
 	</tr>
 
@@ -47,8 +54,8 @@
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.smilies")}</span></td>
 		<td class="row2"><span class="gen">${smilies.getSmilies().size()}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=smiliesReload">${I18n.getMessage("Cache.reload")}</a>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=smiliesReload">${I18n.getMessage("Cache.reload")}</a>
 		</td>
 	</tr>
 
@@ -56,8 +63,8 @@
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.ranking")}</span></td>
 		<td class="row2"><span class="gen">${ranking.size()}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=rankingReload">${I18n.getMessage("Cache.reload")}</a>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=rankingReload">${I18n.getMessage("Cache.reload")}</a>
 		</td>
 	</tr>
 
@@ -65,17 +72,18 @@
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.topic")}</span></td>
 		<td class="row2"><span class="gen">&nbsp;</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=topicsMoreInfo">${I18n.getMessage("Cache.moreInfo")}</a>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=topicsMoreInfo">${I18n.getMessage("Cache.moreInfo")}</a>
 		</td>
 	</tr>
 
 	<!-- Posts -->
 	<tr>
 		<td class="row2"><span class="gen">${I18n.getMessage("Cache.posts")}</span></td>
-		<td class="row2"><span class="gen">${posts.size()} ${I18n.getMessage("Cache.topic")}</span></td>
-		<td class="row2">
-			<a class="gen" href="${contextPath}/jforum${extension}?module=adminCache&action=postsMoreInfo">${I18n.getMessage("Cache.moreInfo")}</a>
+		<td class="row2"><span class="gen">${posts.size()}
+				${I18n.getMessage("Cache.topic")}</span></td>
+		<td class="row2"><a class="gen"
+			href="${contextPath}/jforum${extension}?module=adminCache&action=postsMoreInfo">${I18n.getMessage("Cache.moreInfo")}</a>
 		</td>
 	</tr>
 </table>

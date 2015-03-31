@@ -1,5 +1,5 @@
-<%@ page import="com.ecyrd.jspwiki.*" %>
-<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki" %>
+<%@ page import="com.ecyrd.jspwiki.*"%>
+<%@ taglib uri="/WEB-INF/jspwiki.tld" prefix="wiki"%>
 
 <%! 
     public void jspInit()
