@@ -10,9 +10,6 @@
 	<!-- Enable access to build.properties variables -->
 	<property file="build.properties" />
 
-	<!-- Set to use JDK 1.4 -->
-	<property name="build.compiler" value="javac1.4" />
-
 	<property name="project.name" value="JForum" />
 	<property name="project.title" value="JForum API" />
 	<property name="author" value="JForum Team - http://www.jforum.net/team.jsp" />
@@ -77,7 +74,8 @@
 	<!-- Compile -->
 	<target name="compile" depends="init" description="Compiles the source code">
 		<javac fork="true" debug="true" optimize="false" deprecation="false"
-			source="1.4" target="1.4" srcdir="${src.dir}" destdir="${classes.dir}">
+			source="1.8" target="1.8" srcdir="${src.dir}" destdir="${classes.dir}"
+			includeantruntime="on">
 			<classpath>
 				<path refid="base.path" />
 			</classpath>
